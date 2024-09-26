@@ -1,0 +1,27 @@
+{
+  "name": "echadospalante-core",
+  "version": "1.0.0",
+  "description": "This package contains the core of the echadospalante project, it contains the domain entities, helpers, and other utilities that are shared between the different services.",
+  "main": "dist/index.js",
+  "private": false,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"tsc --watch\" \"node dist/src/index.js --watch\"",
+    "start": "tsc && node dist/src/index.js",
+    "build": "tsc"
+  },
+  "author": "Juan Camilo Cardona Calderón, Maria Carolina Cardona Calderón",
+  "keywords": [
+    "University of Antioquia",
+    "Software Engineering",
+    "echadospalante",
+    "ventures",
+    "entities",
+    "domain",
+    "core"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  }
+}
