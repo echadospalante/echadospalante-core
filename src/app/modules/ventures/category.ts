@@ -7,5 +7,5 @@ export interface VentureCategory {
   slug: string;
   description: string;
   ventures: Venture[];
-  users: User[];
+  users: User[]; // Se agrega para relación inversa de usuarios con preferencias
 }

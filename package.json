@@ -23,5 +23,8 @@
   "license": "MIT",
   "devDependencies": {
     "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "echadospalante-core": "^1.0.1"
   }
 }
