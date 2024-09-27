@@ -1,4 +1,4 @@
-import { VentureEvent } from "../feeds/event";
+import { User } from "../auth";
 import { Venture } from "./venture";
 
 export interface VentureCategory {
@@ -7,4 +7,5 @@ export interface VentureCategory {
   slug: string;
   description: string;
   ventures: Venture[];
+  users: User[];
 }
