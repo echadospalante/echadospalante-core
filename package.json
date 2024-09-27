@@ -9,7 +9,7 @@
     "dev": "concurrently \"tsc --watch\" \"node dist/src/index.js --watch\"",
     "start": "tsc && node dist/src/index.js",
     "build": "tsc",
-    "publish": "tsc && npm publish"
+    "release": "tsc && npm publish"
   },
   "author": "Juan Camilo Cardona Calderón, Maria Carolina Cardona Calderón",
   "keywords": [
