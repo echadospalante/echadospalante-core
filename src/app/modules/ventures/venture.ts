@@ -11,7 +11,7 @@ export interface Venture {
   owner: User;
   active: boolean;
   verified: boolean;
-  detail?: VentureDetail;
+  detail: VentureDetail;
   categories: VentureCategory[];
   createdAt: Date;
 }
