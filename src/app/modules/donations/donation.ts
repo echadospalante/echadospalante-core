@@ -1,9 +1,9 @@
 import { User } from "../auth";
-import { Venture } from "../ventures/venture";
+import { VentureEvent } from "../feeds/event";
 
-export interface Donation {
+export interface EventDonation {
   id: string;
   donor: User;
-  venture: Venture;
+  venture: VentureEvent;
   createdAt: Date;
 }

@@ -1,9 +1,9 @@
-import { Venture } from "../ventures/venture";
-import { Role } from "./role";
-import { Notification } from "../notifications";
 import { Comment } from "../feeds/comment";
-import { UserDetail } from "./detail";
+import { Notification } from "../notifications";
 import { VentureCategory } from "../ventures";
+import { Venture } from "../ventures/venture";
+import { UserDetail } from "./detail";
+import { Role } from "./role";
 
 export interface User {
   id: string;
@@ -11,13 +11,9 @@ export interface User {
   email: string;
   firstName: string;
   lastName: string;
+  active: boolean;
   roles: Role[];
   detail?: UserDetail;
-  notifications: Notification[];
-  ventures: Venture[];
-  comments: Comment[];
-  preferences: VentureCategory[];
-  active: boolean;
   verified: boolean;
   onboardingCompleted: boolean;
   createdAt: Date;

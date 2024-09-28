@@ -1,7 +1,7 @@
 import { User } from "../auth";
 import { Venture } from "./venture";
 
-export interface Subscription {
+export interface VentureSubscription {
   id: string;
   subscriber: User;
   venture: Venture;

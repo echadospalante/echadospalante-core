@@ -1,9 +1,9 @@
 import { User } from "../auth";
-import { Publication } from "./publication";
+import { VenturePublication } from "./publication";
 
 export interface Comment {
   id: string;
   author: User;
   content: string;
-  publication: Publication;
+  publication: VenturePublication;
 }

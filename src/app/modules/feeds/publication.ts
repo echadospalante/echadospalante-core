@@ -3,7 +3,7 @@ import { ContentType } from "../shared";
 import { Venture } from "../ventures/venture";
 import { PublicationClap } from "./clap";
 
-export interface Publication {
+export interface VenturePublication {
   id: string;
   author: User;
   description: string;

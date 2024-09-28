@@ -1,9 +1,9 @@
 import { User } from "../auth";
-import { Publication } from "./publication";
+import { VenturePublication } from "./publication";
 
 export interface PublicationClap {
   id: number;
   user: User;
-  publication: Publication;
+  publication: VenturePublication;
   createdAt: Date;
 }

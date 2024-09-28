@@ -1,2 +1,2 @@
-export { Donation } from "./donation";
-export { VentureSponsorship as Sponsorship } from "./sponsor";
+export { EventDonation } from "./donation";
+export { VentureSponsorship } from "./sponsor";
