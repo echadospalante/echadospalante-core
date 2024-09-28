@@ -1,7 +1,5 @@
-import { Comment } from "../feeds/comment";
-import { Notification } from "../notifications";
 import { VentureCategory } from "../ventures";
-import { Venture } from "../ventures/venture";
+import { UserContact } from "./contact";
 import { UserDetail } from "./detail";
 import { Role } from "./role";
 
@@ -12,10 +10,12 @@ export interface User {
   firstName: string;
   lastName: string;
   active: boolean;
-  roles: Role[];
+  contact?: UserContact;
   detail?: UserDetail;
   verified: boolean;
   onboardingCompleted: boolean;
+  roles: Role[];
+  preferences: VentureCategory[];
   createdAt: Date;
   updatedAt: Date;
 }

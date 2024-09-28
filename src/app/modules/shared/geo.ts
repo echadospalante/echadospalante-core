@@ -7,6 +7,8 @@
 //   flag: string;
 // }
 
+import { UserDetail } from "../user";
+
 // export interface Currency {
 //   id: number;
 //   name: string;
@@ -25,6 +27,8 @@ export interface Department {
 export interface Municipality {
   id: number;
   name: string;
+  department: Department;
+  userDetails: UserDetail[];
   createdAt: Date;
   updatedAt: Date;
 }

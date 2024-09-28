@@ -1,8 +1,13 @@
-import { Country } from "../shared";
+import { User } from "./user";
 
-export interface Contact {
+export interface UserContact {
   id: string;
-  country: Country;
   phoneNumber: string;
   address: string;
+  facebookUrl: string;
+  linkedinUrl: string;
+  twitterUrl: string;
+  instagramUrl: string;
+  user: User;
+  updatedAt: Date;
 }

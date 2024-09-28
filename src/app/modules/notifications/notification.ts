@@ -1,9 +1,9 @@
-import { User } from "../auth";
+import { UserDetail } from "../user";
 
 export interface Notification {
   id: string;
   title: string;
-  user: User;
+  user: UserDetail;
   type: NotificationType;
   status: NotificationStatus;
   description: string;
