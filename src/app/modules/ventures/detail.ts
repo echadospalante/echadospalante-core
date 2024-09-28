@@ -1,14 +1,14 @@
-import { Sponsorship } from "../donations/sponsor";
-import { Publication } from "../feeds/publication";
-import { Subscription } from "./subscription";
-import { Venture } from "./venture";
+import { VentureSponsorship } from "../donations/sponsor";
 import { VentureEvent } from "../feeds/event";
+import { Publication as VenturePublication } from "../feeds/publication";
+import { Subscription as VentureSubscription } from "./subscription";
+import { Venture } from "./venture";
 
 export interface VentureDetail {
   id: string;
   venture: Venture;
   events: VentureEvent[];
-  sponsorships: Sponsorship[];
-  subscriptions: Subscription[];
-  publications: Publication[];
+  sponsorships: VentureSponsorship[];
+  subscriptions: VentureSubscription[];
+  publications: VenturePublication[];
 }
