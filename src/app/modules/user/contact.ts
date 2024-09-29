@@ -8,6 +8,6 @@ export interface UserContact {
   linkedinUrl: string;
   twitterUrl: string;
   instagramUrl: string;
-  user: User;
+  user?: User;
   updatedAt: Date;
 }
