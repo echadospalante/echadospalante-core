@@ -9,3 +9,8 @@ export interface VentureCategory {
   ventures: Venture[];
   users: User[];
 }
+
+export type VentureCategoryCreate = Pick<
+  VentureCategory,
+  "name" | "description"
+>;
