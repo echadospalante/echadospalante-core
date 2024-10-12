@@ -12,10 +12,10 @@ export interface Venture {
   description: string;
   active: boolean;
   verified: boolean;
-  detail: VentureDetail;
-  ownerDetail: UserDetail;
+  detail?: VentureDetail;
+  ownerDetail?: UserDetail;
   categories: VentureCategory[];
-  contact: VentureContact;
-  location: VentureLocation;
+  contact?: VentureContact;
+  location?: VentureLocation;
   createdAt: Date;
 }
