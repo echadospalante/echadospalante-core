@@ -19,3 +19,12 @@ export interface Venture {
   location?: VentureLocation;
   createdAt: Date;
 }
+
+export interface VentureCreate {
+  name: string;
+  coverPhoto: string;
+  description: string;
+  categories: string[];
+  contact: VentureContact;
+  location: VentureLocation;
+}
