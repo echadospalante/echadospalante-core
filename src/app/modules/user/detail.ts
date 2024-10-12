@@ -10,8 +10,8 @@ export interface UserDetail {
   id: string;
   gender: "M" | "F" | "O";
   birthDate: Date;
-  user: User;
-  municipality: Municipality;
+  user?: User;
+  municipality?: Municipality;
   comments: PublicationComment[];
   donations: EventDonation[];
   notifications: Notification[];

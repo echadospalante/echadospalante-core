@@ -6,7 +6,7 @@ import { Venture } from "./venture";
 
 export interface VentureDetail {
   id: string;
-  venture: Venture;
+  venture?: Venture;
   events: VentureEvent[];
   sponsorships: VentureSponsorship[];
   subscriptions: VentureSubscription[];

@@ -4,7 +4,7 @@ export interface VentureContact {
   id: string;
   email: string;
   phoneNumber: string;
-  venture: Venture;
+  venture?: Venture;
   createdAt: Date;
   updatedAt: Date;
 }
