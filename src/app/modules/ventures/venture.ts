@@ -24,7 +24,14 @@ export interface VentureCreate {
   name: string;
   coverPhoto: string;
   description: string;
-  categories: string[];
-  contact: VentureContact;
-  location: VentureLocation;
+  categoriesIds: string[];
+  contact?: {
+    email?: string;
+    phoneNumber?: string;
+  };
+  location?: {
+    lat?: number;
+    lng?: number;
+    description?: string;
+  };
 }
