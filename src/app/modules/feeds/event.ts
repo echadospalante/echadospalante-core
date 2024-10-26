@@ -8,7 +8,7 @@ export interface VentureEvent {
   title: string;
   description: string;
   coverPhoto: string;
-  ventureDetail: VentureDetail;
+  ventureDetail?: VentureDetail;
   location: EventLocation;
   categories: EventCategory[];
   donations: EventDonation[];

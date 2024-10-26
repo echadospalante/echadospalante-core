@@ -7,7 +7,7 @@ export interface VenturePublication {
   id: string;
   description: string;
   active: boolean;
-  ventures?: Venture;
+  venture?: Venture;
   type: PublicationType;
   claps: PublicationClap[];
   comments: PublicationComment[];
