@@ -6,7 +6,7 @@ import { PublicationComment } from "./comment";
 export interface VenturePublication {
   id: string;
   description: string;
-  venture: Venture;
+  ventures?: Venture;
   type: PublicationType;
   claps: PublicationClap[];
   comments: PublicationComment[];
