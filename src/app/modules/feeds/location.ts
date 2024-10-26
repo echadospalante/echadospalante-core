@@ -6,5 +6,5 @@ export interface EventLocation {
   lat?: number;
   lng?: number;
   description?: string;
-  event: VentureEvent;
+  event?: VentureEvent;
 }
