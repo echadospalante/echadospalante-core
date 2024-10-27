@@ -1,4 +1,3 @@
-import { Venture } from "../ventures";
 import { VentureEvent } from "./event";
 
 export interface EventLocation {
