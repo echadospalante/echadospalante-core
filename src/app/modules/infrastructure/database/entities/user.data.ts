@@ -47,12 +47,6 @@ export class UserData {
   @Column({ default: false })
   verified: boolean;
 
-  @Column({ nullable: true, unique: true })
-  contactId?: string;
-
-  @Column({ nullable: true, unique: true })
-  detailId?: string;
-
   @OneToOne(() => UserContactData, (contact) => contact.user)
   @JoinColumn({ name: "contactId" })
   contact?: UserContactData;
