@@ -50,7 +50,7 @@ export class UserDetailData {
     () => PublicationClapData,
     (publicationClap) => publicationClap.user
   )
-  claps: PublicationClapData[];
+  publicationClaps: PublicationClapData[];
 
   @OneToMany(
     () => PublicationCommentData,

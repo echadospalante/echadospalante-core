@@ -7,6 +7,7 @@ import {
   ManyToOne,
   JoinColumn,
 } from "typeorm";
+
 import { UserDetailData } from "./user-detail.data";
 import { VenturePublicationData } from "./venture-publication.data";
 
@@ -31,7 +32,7 @@ export class PublicationClapData {
   @JoinColumn({ name: "publicationId" })
   venturePublication: VenturePublicationData;
 
-  @ManyToOne(() => UserDetailData, (userDetail) => userDetail.claps)
+  @ManyToOne(() => UserDetailData, (userDetail) => userDetail.publicationClaps)
   @JoinColumn({ name: "userDetailId" })
   user: UserDetailData;
 }
