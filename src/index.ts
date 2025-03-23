@@ -1,10 +1,12 @@
-export * from "./app/modules/auth";
-export * from "./app/modules/donations";
-export * from "./app/modules/feeds";
-export * from "./app/modules/shared";
-export * from "./app/modules/news";
-export * from "./app/modules/news";
-export * from "./app/modules/ventures";
-export * from "./app/modules/user";
-export * from "./app/modules/utility";
-// Prueba
+import "reflect-metadata";
+
+export * from "./app/modules/domain/auth";
+export * from "./app/modules/domain/donations";
+export * from "./app/modules/domain/feeds";
+export * from "./app/modules/domain/news";
+export * from "./app/modules/domain/notifications";
+export * from "./app/modules/domain/shared";
+export * from "./app/modules/domain/user";
+export * from "./app/modules/domain/ventures";
+export * from "./app/modules/infrastructure/database/entities";
+export * from "./app/modules/utilities";
