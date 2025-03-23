@@ -10,4 +10,5 @@ export interface UserContact {
   instagramUrl: string;
   user?: User;
   updatedAt: Date;
+  createdAt: Date;
 }
