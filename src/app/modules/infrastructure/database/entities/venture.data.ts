@@ -46,13 +46,16 @@ export class VentureData {
   @UpdateDateColumn()
   updatedAt: Date;
 
-  @OneToOne(() => VentureDetailData, (ventureDetail) => ventureDetail.venture)
+  @OneToOne(() => VentureDetailData, (ventureDetail) => ventureDetail.venture, {
+    cascade: true,
+  })
   @JoinColumn({ name: "detailId" })
   detail?: VentureDetailData;
 
   @OneToOne(
     () => VentureLocationData,
-    (ventureLocation) => ventureLocation.Venture
+    (ventureLocation) => ventureLocation.Venture,
+    { cascade: true }
   )
   @JoinColumn({ name: "locationId" })
   location?: VentureLocationData;
@@ -63,7 +66,8 @@ export class VentureData {
 
   @OneToOne(
     () => VentureContactData,
-    (ventureContact) => ventureContact.Venture
+    (ventureContact) => ventureContact.Venture,
+    { cascade: true }
   )
   @JoinColumn({ name: "ventureContactId" })
   contact?: VentureContactData;
