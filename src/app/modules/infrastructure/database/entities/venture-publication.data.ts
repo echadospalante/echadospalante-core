@@ -47,19 +47,19 @@ export class VenturePublicationData {
 
   @OneToMany(
     () => PublicationClapData,
-    (publicationClap) => publicationClap.venturePublication
+    (publicationClap) => publicationClap.publication
   )
   claps: PublicationClapData[];
 
   @OneToMany(
     () => PublicationCommentData,
-    (publicationComment) => publicationComment.venturePublication
+    (publicationComment) => publicationComment.publication
   )
   comments: PublicationCommentData[];
 
   @OneToMany(
     () => PublicationContentData,
-    (publicationContent) => publicationContent.venturePublication
+    (publicationContent) => publicationContent.publication
   )
   contents: PublicationContentData[];
 }
