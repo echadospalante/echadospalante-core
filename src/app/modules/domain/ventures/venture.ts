@@ -23,7 +23,7 @@ export interface Venture {
 
 export interface VentureCreate {
   name: string;
-  coverPhoto: File;
+  coverPhoto: string;
   description: string;
   categoriesIds: string[];
   contact?: {
