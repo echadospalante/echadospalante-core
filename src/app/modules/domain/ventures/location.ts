@@ -1,9 +1,10 @@
+import { Point } from "geojson";
+
 import { Venture } from "./venture";
 
 export interface VentureLocation {
   id: string;
-  lat?: number;
-  lng?: number;
+  location?: Point;
   description?: string;
   createdAt: Date;
   updatedAt: Date;

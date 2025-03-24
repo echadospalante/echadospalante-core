@@ -5,7 +5,10 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   OneToOne,
+  Index,
 } from "typeorm";
+import { Point } from "geojson";
+
 import { VentureData } from "./venture.data";
 
 @Entity({ name: "venture_location" })
@@ -13,11 +16,9 @@ export class VentureLocationData {
   @PrimaryGeneratedColumn("uuid")
   id: string;
 
-  @Column("float", { nullable: true })
-  lat?: number;
-
-  @Column("float", { nullable: true })
-  lng?: number;
+  @Column("geometry", { spatialFeatureType: "Point", srid: 4326 })
+  @Index({ spatial: true })
+  public location: Point;
 
   @Column({ nullable: true })
   description?: string;
