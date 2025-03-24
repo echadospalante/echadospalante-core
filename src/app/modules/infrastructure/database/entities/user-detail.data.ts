@@ -25,7 +25,7 @@ export class UserDetailData {
   id: string;
 
   @Column({ type: "enum", enum: ["M", "F", "O"] })
-  gender: string;
+  gender: "M" | "F" | "O";
 
   @Column()
   birthDate: Date;
