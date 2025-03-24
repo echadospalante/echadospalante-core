@@ -36,3 +36,17 @@ export interface VentureCreate {
     description?: string;
   };
 }
+
+export interface VentureUpdate {
+  description: string;
+  categoriesIds: string[];
+  contact?: {
+    email?: string;
+    phoneNumber?: string;
+  };
+  location?: {
+    lat?: number;
+    lng?: number;
+    description?: string;
+  };
+}
