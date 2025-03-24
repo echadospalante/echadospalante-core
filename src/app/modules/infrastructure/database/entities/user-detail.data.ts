@@ -24,8 +24,8 @@ export class UserDetailData {
   @PrimaryGeneratedColumn("uuid")
   id: string;
 
-  @Column()
-  gender: string;
+  @Column({ type: "enum", enum: ["M", "F", "O"] })
+  gender: "M" | "F" | "O";
 
   @Column()
   birthDate: Date;
@@ -34,11 +34,17 @@ export class UserDetailData {
   municipalityId: number;
 
   @OneToOne(() => UserData, (user) => user.detail)
-  user: UserData;
+  user?: UserData;
 
   @ManyToOne(() => MunicipalityData, (municipality) => municipality.userDetails)
   @JoinColumn({ name: "municipalityId" })
-  municipality: MunicipalityData;
+  municipality?: MunicipalityData;
+
+  @OneToMany(
+    () => PublicationCommentData,
+    (publicationComment) => publicationComment.User
+  )
+  comments: PublicationCommentData[];
 
   @OneToMany(() => EventDonationData, (eventDonation) => eventDonation.donor)
   donations: EventDonationData[];
@@ -53,15 +59,6 @@ export class UserDetailData {
   publicationClaps: PublicationClapData[];
 
   @OneToMany(
-    () => PublicationCommentData,
-    (publicationComment) => publicationComment.User
-  )
-  comments: PublicationCommentData[];
-
-  @OneToMany(() => VentureData, (venture) => venture.ownerDetail)
-  ventures: VentureData[];
-
-  @OneToMany(
     () => VentureSponsorshipData,
     (ventureSponsorship) => ventureSponsorship.user
   )
@@ -72,4 +69,7 @@ export class UserDetailData {
     (ventureSubscription) => ventureSubscription.user
   )
   subscriptions: VentureSubscriptionData[];
+
+  @OneToMany(() => VentureData, (venture) => venture.ownerDetail)
+  ventures: VentureData[];
 }
