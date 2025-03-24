@@ -15,7 +15,7 @@ import { VentureDetailData } from "./venture-detail.data";
 import { PublicationContentData } from "./publication-content.data";
 import { PublicationType } from "../../../domain/publications";
 
-@Entity()
+@Entity({ name: "venture_publication" })
 export class VenturePublicationData {
   @PrimaryGeneratedColumn("uuid")
   id: string;

@@ -12,7 +12,7 @@ import { NotificationType } from "../../../domain/notifications";
 import { NotificationStatus } from "../../../domain/notifications/notification";
 import { UserDetailData } from "./user-detail.data";
 
-@Entity()
+@Entity({ name: "notification" })
 export class NotificationData {
   @PrimaryGeneratedColumn("uuid")
   id: string;

@@ -17,7 +17,7 @@ import { UserDetailData } from "./user-detail.data";
 import { VentureContactData } from "./venture-contact.data";
 import { VentureCategoryData } from "./venture-category.data";
 
-@Entity()
+@Entity({ name: "venture" })
 export class VentureData {
   @PrimaryGeneratedColumn("uuid")
   id: string;
@@ -73,7 +73,7 @@ export class VentureData {
     (ventureCategory) => ventureCategory.ventures
   )
   @JoinTable({
-    name: "x_venture_vencure_category",
+    name: "x_venture_venture_category",
     joinColumn: { name: "ventureId", referencedColumnName: "id" },
     inverseJoinColumn: { name: "categoryId", referencedColumnName: "id" },
   })

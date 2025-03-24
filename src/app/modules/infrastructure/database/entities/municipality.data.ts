@@ -12,7 +12,7 @@ import {
 import { DepartmentData } from "./department.data";
 import { UserDetailData } from "./user-detail.data";
 
-@Entity()
+@Entity({ name: "municipality" })
 export class MunicipalityData {
   @PrimaryGeneratedColumn()
   id: number;

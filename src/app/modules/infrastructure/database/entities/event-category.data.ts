@@ -10,7 +10,9 @@ import {
 } from "typeorm";
 import { VentureEventData } from "./venture-event.data";
 
-@Entity()
+@Entity({
+  name: "event_category",
+})
 export class EventCategoryData {
   @PrimaryGeneratedColumn("uuid")
   id: string;
@@ -32,7 +34,7 @@ export class EventCategoryData {
 
   @ManyToMany(() => VentureEventData, (ventureEvent) => ventureEvent.categories)
   @JoinTable({
-    name: "x_event_category",
+    name: "x_event_event_category",
     joinColumn: { name: "categoryId", referencedColumnName: "id" },
     inverseJoinColumn: { name: "eventId", referencedColumnName: "id" },
   })

@@ -11,7 +11,7 @@ import {
 import { ContentType } from "../../../domain/shared";
 import { VenturePublicationData } from "./venture-publication.data";
 
-@Entity()
+@Entity({ name: "publication_content" })
 export class PublicationContentData {
   @PrimaryGeneratedColumn("uuid")
   id: string;

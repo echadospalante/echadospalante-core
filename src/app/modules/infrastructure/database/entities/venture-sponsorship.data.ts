@@ -10,7 +10,7 @@ import {
 import { UserDetailData } from "./user-detail.data";
 import { VentureDetailData } from "./venture-detail.data";
 
-@Entity()
+@Entity({ name: "venture_sponsorship" })
 export class VentureSponsorshipData {
   @PrimaryGeneratedColumn("uuid")
   id: string;

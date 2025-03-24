@@ -1,7 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToOne } from "typeorm";
 import { VentureEventData } from "./venture-event.data";
 
-@Entity()
+@Entity({ name: "event_location" })
 export class EventLocationData {
   @PrimaryGeneratedColumn("uuid")
   id: string;

@@ -15,7 +15,7 @@ import { UserContactData } from "./user-contact.data";
 import { UserDetailData } from "./user-detail.data";
 import { VentureCategoryData } from "./venture-category.data";
 
-@Entity()
+@Entity({ name: "user" })
 export class UserData {
   @PrimaryGeneratedColumn("uuid")
   id: string;
@@ -56,10 +56,10 @@ export class UserData {
   detail?: UserDetailData;
 
   @ManyToMany(() => VentureCategoryData, (vc) => vc.users)
-  @JoinTable({ name: "XUserPreferences" })
+  @JoinTable({ name: "x_user_preference" })
   preferences: VentureCategoryData[];
 
   @ManyToMany(() => RoleData, (role) => role.users, { eager: true })
-  @JoinTable({ name: "XUserRoles" })
+  @JoinTable({ name: "x_user_role" })
   roles: RoleData[];
 }

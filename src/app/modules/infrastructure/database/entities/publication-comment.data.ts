@@ -11,7 +11,7 @@ import {
 import { UserDetailData } from "./user-detail.data";
 import { VenturePublicationData } from "./venture-publication.data";
 
-@Entity()
+@Entity({ name: "publication_comment" })
 export class PublicationCommentData {
   @PrimaryGeneratedColumn("uuid")
   id: string;

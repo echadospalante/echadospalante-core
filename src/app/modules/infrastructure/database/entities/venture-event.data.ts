@@ -15,7 +15,7 @@ import { EventDonationData } from "./event-donation.data";
 import { VentureDetailData } from "./venture-detail.data";
 import { EventCategoryData } from "./event-category.data";
 
-@Entity()
+@Entity({ name: "venture_event" })
 export class VentureEventData {
   @PrimaryGeneratedColumn("uuid")
   id: string;

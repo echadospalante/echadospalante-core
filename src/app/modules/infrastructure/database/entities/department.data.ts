@@ -9,7 +9,9 @@ import {
 
 import { MunicipalityData } from "./municipality.data";
 
-@Entity()
+@Entity({
+  name: "department",
+})
 export class DepartmentData {
   @PrimaryGeneratedColumn()
   id: number;

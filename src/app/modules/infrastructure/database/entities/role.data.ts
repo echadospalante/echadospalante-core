@@ -10,7 +10,7 @@ import {
 import { AppRole } from "../../../domain/user";
 import { UserData } from "./user.data";
 
-@Entity()
+@Entity({ name: "role" })
 export class RoleData {
   @PrimaryGeneratedColumn("uuid")
   id: string;

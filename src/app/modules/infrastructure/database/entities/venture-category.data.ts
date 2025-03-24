@@ -10,7 +10,7 @@ import {
 import { UserData } from "./user.data";
 import { VentureData } from "./venture.data";
 
-@Entity()
+@Entity({ name: "venture_category" })
 export class VentureCategoryData {
   @PrimaryGeneratedColumn("uuid")
   id: string;

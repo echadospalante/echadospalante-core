@@ -8,7 +8,7 @@ import {
 } from "typeorm";
 import { VentureData } from "./venture.data";
 
-@Entity()
+@Entity({ name: "venture_location" })
 export class VentureLocationData {
   @PrimaryGeneratedColumn("uuid")
   id: string;
