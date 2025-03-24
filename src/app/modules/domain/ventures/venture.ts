@@ -23,8 +23,8 @@ export interface Venture {
 
 export interface VentureCreate {
   name: string;
-  coverPhoto: string;
   description: string;
+  coverPhoto: string;
   categoriesIds: string[];
   contact?: {
     email?: string;
@@ -38,7 +38,7 @@ export interface VentureCreate {
 }
 
 export interface VentureUpdate {
-  description: string;
+  coverPhoto: string;
   categoriesIds: string[];
   contact?: {
     email?: string;
