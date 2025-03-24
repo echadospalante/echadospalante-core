@@ -4,6 +4,8 @@ import { VentureContact } from "./contact";
 import { VentureDetail } from "./detail";
 import { VentureLocation } from "./location";
 
+// TODO
+
 export interface Venture {
   id: string;
   name: string;
