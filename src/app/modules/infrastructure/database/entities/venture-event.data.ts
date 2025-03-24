@@ -29,8 +29,19 @@ export class VentureEventData {
   @Column()
   coverPhoto: string;
 
-  @Column()
-  ventureId: string;
+  @ManyToOne(() => VentureDetailData, (ventureDetail) => ventureDetail.events)
+  @JoinColumn({ name: "ventureId" })
+  ventureDetail?: VentureDetailData;
+
+  @OneToOne(() => EventLocationData, (eventLocation) => eventLocation.event)
+  @JoinColumn({ name: "locationId" })
+  location: EventLocationData;
+
+  @ManyToMany(() => EventCategoryData, (eventCategory) => eventCategory.events)
+  categories: EventCategoryData[];
+
+  @OneToMany(() => EventDonationData, (eventDonation) => eventDonation.event)
+  donations: EventDonationData[];
 
   @Column()
   startDate: Date;
@@ -43,24 +54,4 @@ export class VentureEventData {
 
   @UpdateDateColumn()
   updatedAt: Date;
-
-  @Column({ unique: true })
-  locationId: string;
-
-  @ManyToOne(() => VentureDetailData, (ventureDetail) => ventureDetail.events)
-  @JoinColumn({ name: "ventureId" })
-  ventureDetail: VentureDetailData;
-
-  @OneToOne(() => EventLocationData, (eventLocation) => eventLocation.event)
-  @JoinColumn({ name: "locationId" })
-  location: EventLocationData;
-
-  @OneToMany(() => EventDonationData, (eventDonation) => eventDonation.event)
-  donations: EventDonationData[];
-
-  @ManyToMany(
-    () => EventCategoryData,
-    (eventCategory) => eventCategory.ventureEvent
-  )
-  EventCategory: EventCategoryData[];
 }

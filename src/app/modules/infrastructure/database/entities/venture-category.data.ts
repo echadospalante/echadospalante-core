@@ -31,8 +31,8 @@ export class VentureCategoryData {
   updatedAt: Date;
 
   @ManyToMany(() => UserData, (user) => user.preferences)
-  users: UserData[];
+  users?: UserData[];
 
   @ManyToMany(() => VentureData, (venture) => venture.categories)
-  ventures: VentureData[];
+  ventures?: VentureData[];
 }

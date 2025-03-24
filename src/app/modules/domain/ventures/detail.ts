@@ -1,6 +1,6 @@
-import { VentureSponsorship } from "../donations/sponsor";
-import { VentureEvent } from "../feeds/event";
-import { VenturePublication } from "../feeds/publication";
+import { VentureSponsorship } from "../contributions/sponsor";
+import { VentureEvent } from "../events/event";
+import { VenturePublication } from "../publications/publication";
 import { VentureSubscription } from "./subscription";
 import { Venture } from "./venture";
 

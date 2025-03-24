@@ -13,17 +13,14 @@ export class VentureLocationData {
   @PrimaryGeneratedColumn("uuid")
   id: string;
 
-  @Column({ nullable: true })
-  ventureId: string;
+  @Column("float", { nullable: true })
+  lat?: number;
 
   @Column("float", { nullable: true })
-  lat: number;
-
-  @Column("float", { nullable: true })
-  lng: number;
+  lng?: number;
 
   @Column({ nullable: true })
-  description: string;
+  description?: string;
 
   @CreateDateColumn()
   createdAt: Date;
@@ -32,5 +29,5 @@ export class VentureLocationData {
   updatedAt: Date;
 
   @OneToOne(() => VentureData, (venture) => venture.location)
-  Venture: VentureData;
+  Venture?: VentureData;
 }

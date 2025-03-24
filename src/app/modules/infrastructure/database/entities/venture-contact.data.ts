@@ -26,5 +26,5 @@ export class VentureContactData {
   updatedAt: Date;
 
   @OneToOne(() => VentureData, (venture) => venture.contact)
-  Venture: VentureData;
+  Venture?: VentureData;
 }

@@ -16,23 +16,17 @@ export class PublicationClapData {
   @PrimaryGeneratedColumn("uuid")
   id: string;
 
-  @Column()
-  publicationId: string;
-
-  @CreateDateColumn()
-  createdAt: Date;
-
-  @Column()
-  userDetailId: string;
-
   @ManyToOne(
     () => VenturePublicationData,
     (venturePublication) => venturePublication.claps
   )
   @JoinColumn({ name: "publicationId" })
-  venturePublication: VenturePublicationData;
+  publication: VenturePublicationData;
 
   @ManyToOne(() => UserDetailData, (userDetail) => userDetail.publicationClaps)
   @JoinColumn({ name: "userDetailId" })
   user: UserDetailData;
+
+  @CreateDateColumn()
+  createdAt: Date;
 }

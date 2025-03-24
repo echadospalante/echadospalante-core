@@ -10,6 +10,7 @@ import {
   JoinTable,
   JoinColumn,
 } from "typeorm";
+
 import { VentureDetailData } from "./venture-detail.data";
 import { VentureLocationData } from "./venture-location.data";
 import { UserDetailData } from "./user-detail.data";
@@ -39,45 +40,33 @@ export class VentureData {
   @Column({ default: false })
   verified: boolean;
 
-  @Column({ unique: true })
-  detailId: string;
-
   @CreateDateColumn()
   createdAt: Date;
 
   @UpdateDateColumn()
   updatedAt: Date;
 
-  @Column({ unique: true })
-  locationId: string;
-
-  @Column()
-  ownerDetailId: string;
-
-  @Column({ unique: true })
-  ventureContactId: string;
-
   @OneToOne(() => VentureDetailData, (ventureDetail) => ventureDetail.venture)
   @JoinColumn({ name: "detailId" })
-  detail: VentureDetailData;
+  detail?: VentureDetailData;
 
   @OneToOne(
     () => VentureLocationData,
     (ventureLocation) => ventureLocation.Venture
   )
   @JoinColumn({ name: "locationId" })
-  location: VentureLocationData;
+  location?: VentureLocationData;
 
   @ManyToOne(() => UserDetailData, (userDetail) => userDetail.ventures)
   @JoinColumn({ name: "ownerDetailId" })
-  ownerDetail: UserDetailData;
+  ownerDetail?: UserDetailData;
 
   @OneToOne(
     () => VentureContactData,
     (ventureContact) => ventureContact.Venture
   )
   @JoinColumn({ name: "ventureContactId" })
-  contact: VentureContactData;
+  contact?: VentureContactData;
 
   @ManyToMany(
     () => VentureCategoryData,

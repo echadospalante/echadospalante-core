@@ -6,8 +6,10 @@ export interface VentureCategory {
   name: string;
   slug: string;
   description: string;
-  ventures: Venture[];
-  users: User[];
+  ventures?: Venture[];
+  users?: User[];
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 export type VentureCategoryCreate = Pick<

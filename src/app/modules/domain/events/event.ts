@@ -1,7 +1,7 @@
-import { EventDonation } from "../donations";
+import { EventDonation } from "../contributions";
 import { Venture, VentureDetail } from "../ventures";
-import { EventCategory } from "./category";
-import { EventLocation } from "./location";
+import { EventCategory } from "./event-category";
+import { EventLocation } from "./event-location";
 
 export interface VentureEvent {
   id: string;
@@ -15,4 +15,5 @@ export interface VentureEvent {
   startDate: Date;
   endDate: Date;
   createdAt: Date;
+  updatedAt: Date;
 }

@@ -16,19 +16,13 @@ export class EventDonationData {
   id: string;
 
   @Column()
-  eventId: string;
-
-  @Column("float")
-  amount: number;
+  currency: string;
 
   @Column()
-  currency: string;
+  amount: number;
 
   @CreateDateColumn()
   createdAt: Date;
-
-  @Column()
-  donorDetailId: string;
 
   @ManyToOne(() => UserDetailData, (userDetail) => userDetail.donations)
   @JoinColumn({ name: "donorDetailId" })

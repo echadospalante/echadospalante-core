@@ -16,29 +16,20 @@ export class PublicationCommentData {
   @PrimaryGeneratedColumn("uuid")
   id: string;
 
-  @Column()
-  authorDetailId: string;
-
-  @Column()
-  publicationId: string;
-
-  @Column()
-  body: string;
-
-  @CreateDateColumn()
-  createdAt: Date;
-
-  @UpdateDateColumn()
-  updatedAt: Date;
-
   @ManyToOne(() => UserDetailData, (userDetail) => userDetail.comments)
   @JoinColumn({ name: "authorDetailId" })
-  User: UserDetailData;
+  author: UserDetailData;
+
+  @Column()
+  content: string;
 
   @ManyToOne(
     () => VenturePublicationData,
     (venturePublication) => venturePublication.comments
   )
   @JoinColumn({ name: "publicationId" })
-  venturePublication: VenturePublicationData;
+  publication: VenturePublicationData;
+
+  @CreateDateColumn()
+  createdAt: Date;
 }

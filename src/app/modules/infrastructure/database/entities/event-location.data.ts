@@ -7,14 +7,14 @@ export class EventLocationData {
   id: string;
 
   @Column("float", { nullable: true })
-  lat: number;
+  lat?: number;
 
   @Column("float", { nullable: true })
-  lng: number;
+  lng?: number;
 
   @Column({ nullable: true })
-  description: string;
+  description?: string;
 
   @OneToOne(() => VentureEventData, (ventureEvent) => ventureEvent.location)
-  event: VentureEventData;
+  event?: VentureEventData;
 }

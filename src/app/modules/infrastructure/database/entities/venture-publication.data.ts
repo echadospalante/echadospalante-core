@@ -13,7 +13,7 @@ import { PublicationClapData } from "./publication-clap.data";
 import { PublicationCommentData } from "./publication-comment.data";
 import { VentureDetailData } from "./venture-detail.data";
 import { PublicationContentData } from "./publication-content.data";
-import { PublicationType } from "../../../domain/feeds";
+import { PublicationType } from "../../../domain/publications";
 
 @Entity()
 export class VenturePublicationData {

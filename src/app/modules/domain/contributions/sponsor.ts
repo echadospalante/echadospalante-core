@@ -1,11 +1,11 @@
-import { User } from "../auth";
 import { UserDetail } from "../user";
-import { Venture } from "../ventures/venture";
+import { VentureDetail } from "../ventures";
 
 export interface VentureSponsorship {
   id: string;
   sponsor?: UserDetail;
-  venture?: Venture;
+  venture?: VentureDetail;
   monthlyAmount: number;
   createdAt: Date;
+  updatedAt: Date;
 }

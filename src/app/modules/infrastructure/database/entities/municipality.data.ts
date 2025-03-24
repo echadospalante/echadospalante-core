@@ -20,9 +20,6 @@ export class MunicipalityData {
   @Column()
   name: string;
 
-  @Column()
-  departmentId: number;
-
   @CreateDateColumn()
   createdAt: Date;
 

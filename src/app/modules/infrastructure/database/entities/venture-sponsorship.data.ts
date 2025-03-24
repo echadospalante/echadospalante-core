@@ -15,9 +15,6 @@ export class VentureSponsorshipData {
   @PrimaryGeneratedColumn("uuid")
   id: string;
 
-  @Column()
-  ventureDetailId: string;
-
   @Column("float")
   monthlyAmount: number;
 
@@ -27,17 +24,14 @@ export class VentureSponsorshipData {
   @UpdateDateColumn()
   updatedAt: Date;
 
-  @Column()
-  sponsorDetailId: string;
-
   @ManyToOne(() => UserDetailData, (userDetail) => userDetail.sponsorships)
   @JoinColumn({ name: "sponsorDetailId" })
-  user: UserDetailData;
+  sponsor?: UserDetailData;
 
   @ManyToOne(
     () => VentureDetailData,
     (ventureDetail) => ventureDetail.sponsorships
   )
   @JoinColumn({ name: "ventureDetailId" })
-  detail: VentureDetailData;
+  detail?: VentureDetailData;
 }

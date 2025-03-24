@@ -30,9 +30,6 @@ export class UserDetailData {
   @Column()
   birthDate: Date;
 
-  @Column()
-  municipalityId: number;
-
   @OneToOne(() => UserData, (user) => user.detail)
   user?: UserData;
 
@@ -42,7 +39,7 @@ export class UserDetailData {
 
   @OneToMany(
     () => PublicationCommentData,
-    (publicationComment) => publicationComment.User
+    (publicationComment) => publicationComment.author
   )
   comments: PublicationCommentData[];
 
@@ -60,13 +57,13 @@ export class UserDetailData {
 
   @OneToMany(
     () => VentureSponsorshipData,
-    (ventureSponsorship) => ventureSponsorship.user
+    (ventureSponsorship) => ventureSponsorship.sponsor
   )
   sponsorships: VentureSponsorshipData[];
 
   @OneToMany(
     () => VentureSubscriptionData,
-    (ventureSubscription) => ventureSubscription.user
+    (ventureSubscription) => ventureSubscription.subscriber
   )
   subscriptions: VentureSubscriptionData[];
 

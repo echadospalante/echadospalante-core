@@ -1,8 +1,8 @@
-export { EventCategory } from "./category";
+export { EventCategory } from "../events/event-category";
 export { PublicationClap } from "./clap";
 export { PublicationComment } from "./comment";
-export { VentureEvent } from "./event";
-export { EventLocation } from "./location";
+export { VentureEvent } from "../events/event";
+export { EventLocation } from "../events/event-location";
 export {
   PublicationContent,
   PublicationType,

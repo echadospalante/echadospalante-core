@@ -1,5 +1,5 @@
-import { EventDonation, VentureSponsorship } from "../donations";
-import { PublicationClap, PublicationComment } from "../feeds";
+import { EventDonation, VentureSponsorship } from "../contributions";
+import { PublicationClap, PublicationComment } from "../publications";
 // import { NewsClap } from "../news";
 import { Municipality } from "../shared/geo";
 import { Venture, VentureCategory, VentureSubscription } from "../ventures";

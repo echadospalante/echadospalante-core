@@ -18,6 +18,7 @@ export interface Venture {
   contact?: VentureContact;
   location?: VentureLocation;
   createdAt: Date;
+  updatedAt: Date;
 }
 
 export interface VentureCreate {

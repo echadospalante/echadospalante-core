@@ -25,7 +25,7 @@ export class VentureDetailData {
   updatedAt: Date;
 
   @OneToOne(() => VentureData, (venture) => venture.detail)
-  venture: VentureData;
+  venture?: VentureData;
 
   @OneToMany(
     () => VentureEventData,

@@ -15,23 +15,17 @@ export class VentureSubscriptionData {
   @PrimaryGeneratedColumn("uuid")
   id: string;
 
-  @Column()
-  ventureId: string;
-
   @CreateDateColumn()
   createdAt: Date;
 
-  @Column()
-  subscriberDetailId: string;
-
   @ManyToOne(() => UserDetailData, (userDetail) => userDetail.subscriptions)
   @JoinColumn({ name: "subscriberDetailId" })
-  user: UserDetailData;
+  subscriber?: UserDetailData;
 
   @ManyToOne(
     () => VentureDetailData,
     (ventureDetail) => ventureDetail.subscriptions
   )
   @JoinColumn({ name: "ventureId" })
-  detail: VentureDetailData;
+  detail?: VentureDetailData;
 }

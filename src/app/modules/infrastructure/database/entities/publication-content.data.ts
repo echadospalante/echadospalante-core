@@ -22,9 +22,6 @@ export class PublicationContentData {
   @Column()
   content: string;
 
-  @Column()
-  publicationId: string;
-
   @CreateDateColumn()
   createdAt: Date;
 
@@ -36,5 +33,5 @@ export class PublicationContentData {
     (venturePublication) => venturePublication.contents
   )
   @JoinColumn({ name: "publicationId" })
-  venturePublication: VenturePublicationData;
+  publication: VenturePublicationData;
 }

@@ -1,9 +1,8 @@
 import "reflect-metadata";
 
 export * from "./app/modules/domain/auth";
-export * from "./app/modules/domain/donations";
-export * from "./app/modules/domain/feeds";
-export * from "./app/modules/domain/news";
+export * from "./app/modules/domain/contributions";
+export * from "./app/modules/domain/publications";
 export * from "./app/modules/domain/notifications";
 export * from "./app/modules/domain/shared";
 export * from "./app/modules/domain/user";

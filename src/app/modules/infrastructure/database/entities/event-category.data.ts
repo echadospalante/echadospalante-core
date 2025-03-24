@@ -39,5 +39,5 @@ export class EventCategoryData {
     joinColumn: { name: "categoryId", referencedColumnName: "id" },
     inverseJoinColumn: { name: "eventId", referencedColumnName: "id" },
   })
-  ventureEvent: VentureEventData[];
+  events: VentureEventData[];
 }

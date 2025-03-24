@@ -28,5 +28,5 @@ export class RoleData {
   updatedAt: Date;
 
   @ManyToMany(() => UserData, (user) => user.roles, { eager: false })
-  users: UserData[];
+  users?: UserData[];
 }
