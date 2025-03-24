@@ -59,7 +59,7 @@ export class UserData {
   @JoinTable({ name: "XUserPreferences" })
   preferences: VentureCategoryData[];
 
-  @ManyToMany(() => RoleData, (role) => role.users)
+  @ManyToMany(() => RoleData, (role) => role.users, { eager: true })
   @JoinTable({ name: "XUserRoles" })
   roles: RoleData[];
 }
