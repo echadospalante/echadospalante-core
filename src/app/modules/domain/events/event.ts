@@ -17,3 +17,21 @@ export interface VentureEvent {
   createdAt: Date;
   updatedAt: Date;
 }
+
+export interface EventCreate {
+  title: string;
+  description: string;
+  coverPhoto: string;
+  location: EventLocation;
+  categoriesIds: string[];
+  startDate: Date;
+  endDate: Date;
+}
+
+export interface EventUpdate {
+  coverPhoto: string;
+  location: EventLocation;
+  categoriesIds: string[];
+  startDate: Date;
+  endDate: Date;
+}
