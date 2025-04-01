@@ -6,6 +6,7 @@ import { EventLocation } from "./event-location";
 export interface VentureEvent {
   id: string;
   title: string;
+  slug: string;
   description: string;
   coverPhoto: string;
   ventureDetail?: VentureDetail;

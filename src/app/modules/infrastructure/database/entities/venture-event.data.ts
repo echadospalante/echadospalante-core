@@ -29,6 +29,9 @@ export class VentureEventData {
   @Column()
   coverPhoto: string;
 
+  @Column({ type: "varchar", unique: true })
+  slug: string;
+
   @ManyToOne(() => VentureDetailData, (ventureDetail) => ventureDetail.events)
   @JoinColumn({ name: "ventureId" })
   ventureDetail?: VentureDetailData;
