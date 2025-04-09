@@ -1,9 +1,10 @@
+import { Point } from "geojson";
+
 import { VentureEvent } from "./event";
 
 export interface EventLocation {
   id: string;
-  lat?: number;
-  lng?: number;
+  location?: Point;
   description?: string;
   event?: VentureEvent;
 }

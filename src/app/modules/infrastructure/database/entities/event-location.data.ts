@@ -1,4 +1,11 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToOne } from "typeorm";
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  OneToOne,
+  Point,
+  Index,
+} from "typeorm";
 import { VentureEventData } from "./venture-event.data";
 
 @Entity({ name: "event_location" })
@@ -6,11 +13,9 @@ export class EventLocationData {
   @PrimaryGeneratedColumn("uuid")
   id: string;
 
-  @Column("float", { nullable: true })
-  lat?: number;
-
-  @Column("float", { nullable: true })
-  lng?: number;
+  @Column("geometry", { spatialFeatureType: "Point", srid: 4326 })
+  @Index({ spatial: true })
+  public location: Point;
 
   @Column({ nullable: true })
   description?: string;
