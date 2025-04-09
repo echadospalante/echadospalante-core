@@ -7,10 +7,10 @@ export class EventContactData {
   id: string;
 
   @Column("varchar", { nullable: true })
-  contactPhoneNumber?: number;
+  contactPhoneNumber?: string;
 
   @Column("varchar", { nullable: true })
-  contactEmail?: number;
+  contactEmail?: string;
 
   @OneToOne(() => VentureEventData, (ventureEvent) => ventureEvent.contact)
   event?: VentureEventData;
