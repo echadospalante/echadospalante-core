@@ -1,6 +1,7 @@
 import { EventDonation } from "../contributions";
 import { Venture, VentureDetail } from "../ventures";
 import { EventCategory } from "./event-category";
+import { EventContact } from "./event-contact";
 import { EventLocation } from "./event-location";
 
 export interface VentureEvent {
@@ -11,6 +12,7 @@ export interface VentureEvent {
   coverPhoto: string;
   ventureDetail?: VentureDetail;
   location: EventLocation;
+  contact: EventContact;
   categories: EventCategory[];
   donations: EventDonation[];
   startDate: Date;
