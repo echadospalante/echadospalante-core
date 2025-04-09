@@ -28,6 +28,8 @@ export interface EventCreate {
   location: EventLocation;
   categoriesIds: string[];
   startDate: Date;
+  contactEmail?: string;
+  contactPhoneNumber?: string;
   endDate: Date;
 }
 
