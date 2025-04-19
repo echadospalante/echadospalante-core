@@ -1,12 +1,12 @@
 import {
-  CreateDateColumn,
   Entity,
-  JoinColumn,
-  ManyToOne,
-  PrimaryGeneratedColumn,
   Unique,
+  PrimaryGeneratedColumn,
+  CreateDateColumn,
+  Column,
+  ManyToOne,
+  JoinColumn,
 } from "typeorm";
-
 import { UserData } from "./user.data";
 import { VentureData } from "./venture.data";
 
@@ -18,6 +18,12 @@ export class VentureSubscriptionData {
 
   @CreateDateColumn()
   createdAt: Date;
+
+  @Column()
+  subscriberId: string;
+
+  @Column()
+  ventureId: string;
 
   @ManyToOne(() => UserData, (user) => user.subscriptions)
   @JoinColumn({ name: "subscriberId" })
