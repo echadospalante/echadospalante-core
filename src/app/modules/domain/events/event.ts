@@ -25,7 +25,11 @@ export interface EventCreate {
   title: string;
   description: string;
   coverPhoto: string;
-  location: EventLocation;
+  location?: {
+    lat?: number;
+    lng?: number;
+    description?: string;
+  };
   categoriesIds: string[];
   startDate: Date;
   contactEmail?: string;
