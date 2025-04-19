@@ -1,6 +1,6 @@
 {
   "name": "echadospalante-core",
-  "version": "13.0.2",
+  "version": "13.0.3",
   "description": "This package contains the core of the echadospalante project, it contains the domain entities, helpers, and other utilities that are shared between the different services.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
