@@ -56,7 +56,9 @@ export class UserData {
   @Column({ default: false })
   verified: boolean;
 
-  @OneToOne(() => UserContactData, (contact) => contact.user)
+  @OneToOne(() => UserContactData, (contact) => contact.user, {
+    nullable: true,
+  })
   @JoinColumn({ name: "contactId" })
   contact?: UserContactData;
 
@@ -68,13 +70,15 @@ export class UserData {
   @JoinTable({ name: "x_user_role" })
   roles: RoleData[];
 
-  @Column({ type: "enum", enum: ["M", "F", "O"] })
-  gender: "M" | "F" | "O";
+  @Column({ type: "enum", enum: ["M", "F", "O"], nullable: true })
+  gender?: "M" | "F" | "O";
 
-  @Column()
-  birthDate: Date;
+  @Column({ nullable: true })
+  birthDate?: Date;
 
-  @ManyToOne(() => MunicipalityData, (municipality) => municipality.users)
+  @ManyToOne(() => MunicipalityData, (municipality) => municipality.users, {
+    nullable: true,
+  })
   @JoinColumn({ name: "municipalityId" })
   municipality?: MunicipalityData;
 
