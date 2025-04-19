@@ -55,7 +55,7 @@ export class VentureData {
   @OneToOne(
     () => VentureLocationData,
     (ventureLocation) => ventureLocation.Venture,
-    { cascade: true }
+    { cascade: true, eager: true }
   )
   @JoinColumn({ name: "locationId" })
   location?: VentureLocationData;
@@ -74,7 +74,8 @@ export class VentureData {
 
   @ManyToMany(
     () => VentureCategoryData,
-    (ventureCategory) => ventureCategory.ventures
+    (ventureCategory) => ventureCategory.ventures,
+    { eager: true }
   )
   @JoinTable({
     name: "x_venture_venture_category",

@@ -40,6 +40,7 @@ export class VentureEventData {
   @JoinColumn({ name: "locationId" })
   @OneToOne(() => EventLocationData, (eventLocation) => eventLocation.event, {
     cascade: true,
+    eager: true,
   })
   location: EventLocationData;
 
@@ -49,7 +50,11 @@ export class VentureEventData {
   })
   contact: EventContactData;
 
-  @ManyToMany(() => EventCategoryData, (eventCategory) => eventCategory.events)
+  @ManyToMany(
+    () => EventCategoryData,
+    (eventCategory) => eventCategory.events,
+    { eager: true }
+  )
   categories: EventCategoryData[];
 
   @OneToMany(() => EventDonationData, (eventDonation) => eventDonation.event)
