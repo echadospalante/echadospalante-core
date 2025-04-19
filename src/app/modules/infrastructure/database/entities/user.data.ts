@@ -5,15 +5,24 @@ import {
   JoinColumn,
   JoinTable,
   ManyToMany,
+  ManyToOne,
+  OneToMany,
   OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from "typeorm";
 
+import { EventDonationData } from "./event-donation.data";
+import { MunicipalityData } from "./municipality.data";
+import { NotificationData } from "./notification.data";
+import { PublicationClapData } from "./publication-clap.data";
+import { PublicationCommentData } from "./publication-comment.data";
 import { RoleData } from "./role.data";
 import { UserContactData } from "./user-contact.data";
-import { UserDetailData } from "./user-detail.data";
 import { VentureCategoryData } from "./venture-category.data";
+import { VentureSponsorshipData } from "./venture-sponsorship.data";
+import { VentureSubscriptionData } from "./venture-subscription.data";
+import { VentureData } from "./venture.data";
 
 @Entity({ name: "user" })
 export class UserData {
@@ -51,10 +60,6 @@ export class UserData {
   @JoinColumn({ name: "contactId" })
   contact?: UserContactData;
 
-  @OneToOne(() => UserDetailData, (detail) => detail.user)
-  @JoinColumn({ name: "detailId" })
-  detail?: UserDetailData;
-
   @ManyToMany(() => VentureCategoryData, (vc) => vc.users)
   @JoinTable({ name: "x_user_preference" })
   preferences: VentureCategoryData[];
@@ -62,4 +67,47 @@ export class UserData {
   @ManyToMany(() => RoleData, (role) => role.users, { eager: true })
   @JoinTable({ name: "x_user_role" })
   roles: RoleData[];
+
+  @Column({ type: "enum", enum: ["M", "F", "O"] })
+  gender: "M" | "F" | "O";
+
+  @Column()
+  birthDate: Date;
+
+  @ManyToOne(() => MunicipalityData, (municipality) => municipality.users)
+  @JoinColumn({ name: "municipalityId" })
+  municipality?: MunicipalityData;
+
+  @OneToMany(
+    () => PublicationCommentData,
+    (publicationComment) => publicationComment.author
+  )
+  comments: PublicationCommentData[];
+
+  @OneToMany(() => EventDonationData, (eventDonation) => eventDonation.donor)
+  donations: EventDonationData[];
+
+  @OneToMany(() => NotificationData, (notification) => notification.user)
+  notifications: NotificationData[];
+
+  @OneToMany(
+    () => PublicationClapData,
+    (publicationClap) => publicationClap.user
+  )
+  publicationClaps: PublicationClapData[];
+
+  @OneToMany(
+    () => VentureSponsorshipData,
+    (ventureSponsorship) => ventureSponsorship.sponsor
+  )
+  sponsorships: VentureSponsorshipData[];
+
+  @OneToMany(
+    () => VentureSubscriptionData,
+    (ventureSubscription) => ventureSubscription.subscriber
+  )
+  subscriptions: VentureSubscriptionData[];
+
+  @OneToMany(() => VentureData, (venture) => venture.owner)
+  ventures: VentureData[];
 }

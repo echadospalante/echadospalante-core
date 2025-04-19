@@ -8,17 +8,17 @@ import {
   UpdateDateColumn,
 } from "typeorm";
 
-import { UserDetailData } from "./user-detail.data";
 import { VenturePublicationData } from "./venture-publication.data";
+import { UserData } from "./user.data";
 
 @Entity({ name: "publication_comment" })
 export class PublicationCommentData {
   @PrimaryGeneratedColumn("uuid")
   id: string;
 
-  @ManyToOne(() => UserDetailData, (userDetail) => userDetail.comments)
-  @JoinColumn({ name: "authorDetailId" })
-  author: UserDetailData;
+  @ManyToOne(() => UserData, (user) => user.comments)
+  @JoinColumn({ name: "authorId" })
+  author: UserData;
 
   @Column()
   content: string;

@@ -1,11 +1,9 @@
-import { User } from "../auth";
-import { UserDetail } from "../user";
-import { VentureDetail } from "./detail";
+import { User } from "../user";
 import { Venture } from "./venture";
 
 export interface VentureSubscription {
   id: string;
-  subscriber?: UserDetail;
-  venture?: VentureDetail;
+  subscriber?: User;
+  venture?: Venture;
   createdAt: Date;
 }

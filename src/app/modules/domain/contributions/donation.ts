@@ -1,12 +1,11 @@
-import { User } from "../auth";
 import { VentureEvent } from "../events/event";
-import { UserDetail } from "../user";
+import { User } from "../user";
 
 export interface EventDonation {
   id: string;
   amount: number;
   currency: string;
   createdAt: Date;
-  donor: UserDetail;
+  donor: User;
   event: VentureEvent;
 }

@@ -10,7 +10,7 @@ import {
 } from "typeorm";
 
 import { DepartmentData } from "./department.data";
-import { UserDetailData } from "./user-detail.data";
+import { UserData } from "./user.data";
 
 @Entity({ name: "municipality" })
 export class MunicipalityData {
@@ -30,6 +30,6 @@ export class MunicipalityData {
   @JoinColumn({ name: "departmentId" })
   department: DepartmentData;
 
-  @OneToMany(() => UserDetailData, (ud) => ud.municipality)
-  userDetails: UserDetailData[];
+  @OneToMany(() => UserData, (user) => user.municipality)
+  users: UserData[];
 }

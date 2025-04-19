@@ -7,8 +7,8 @@ import {
   ManyToOne,
   JoinColumn,
 } from "typeorm";
-import { UserDetailData } from "./user-detail.data";
 import { VentureEventData } from "./venture-event.data";
+import { UserData } from "./user.data";
 
 @Entity({ name: "event_donation" })
 export class EventDonationData {
@@ -24,9 +24,9 @@ export class EventDonationData {
   @CreateDateColumn()
   createdAt: Date;
 
-  @ManyToOne(() => UserDetailData, (userDetail) => userDetail.donations)
-  @JoinColumn({ name: "donorDetailId" })
-  donor: UserDetailData;
+  @ManyToOne(() => UserData, (user) => user.donations)
+  @JoinColumn({ name: "donorId" })
+  donor: UserData;
 
   @ManyToOne(() => VentureEventData, (ventureEvent) => ventureEvent.donations)
   @JoinColumn({ name: "eventId" })

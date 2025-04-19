@@ -7,8 +7,8 @@ import {
   ManyToOne,
   JoinColumn,
 } from "typeorm";
-import { UserDetailData } from "./user-detail.data";
-import { VentureDetailData } from "./venture-detail.data";
+import { UserData } from "./user.data";
+import { VentureData } from "./venture.data";
 
 @Entity({ name: "venture_sponsorship" })
 export class VentureSponsorshipData {
@@ -24,14 +24,11 @@ export class VentureSponsorshipData {
   @UpdateDateColumn()
   updatedAt: Date;
 
-  @ManyToOne(() => UserDetailData, (userDetail) => userDetail.sponsorships)
-  @JoinColumn({ name: "sponsorDetailId" })
-  sponsor?: UserDetailData;
+  @ManyToOne(() => UserData, (user) => user.sponsorships)
+  @JoinColumn({ name: "sponsorId" })
+  sponsor?: UserData;
 
-  @ManyToOne(
-    () => VentureDetailData,
-    (ventureDetail) => ventureDetail.sponsorships
-  )
-  @JoinColumn({ name: "ventureDetailId" })
-  detail?: VentureDetailData;
+  @ManyToOne(() => VentureData, (venture) => venture.sponsorships)
+  @JoinColumn({ name: "ventureId" })
+  venture?: VentureData;
 }

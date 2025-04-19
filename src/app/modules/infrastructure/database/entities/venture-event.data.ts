@@ -12,9 +12,9 @@ import {
 } from "typeorm";
 import { EventLocationData } from "./event-location.data";
 import { EventDonationData } from "./event-donation.data";
-import { VentureDetailData } from "./venture-detail.data";
 import { EventCategoryData } from "./event-category.data";
 import { EventContactData } from "./event-contact.data";
+import { VentureData } from "./venture.data";
 
 @Entity({ name: "venture_event" })
 export class VentureEventData {
@@ -33,9 +33,9 @@ export class VentureEventData {
   @Column({ type: "varchar", unique: true })
   slug: string;
 
-  @ManyToOne(() => VentureDetailData, (ventureDetail) => ventureDetail.events)
+  @ManyToOne(() => VentureData, (venture) => venture.events)
   @JoinColumn({ name: "ventureId" })
-  ventureDetail?: VentureDetailData;
+  venture?: VentureData;
 
   @JoinColumn({ name: "locationId" })
   @OneToOne(() => EventLocationData, (eventLocation) => eventLocation.event, {

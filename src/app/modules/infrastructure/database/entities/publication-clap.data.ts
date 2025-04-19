@@ -8,8 +8,8 @@ import {
   JoinColumn,
 } from "typeorm";
 
-import { UserDetailData } from "./user-detail.data";
 import { VenturePublicationData } from "./venture-publication.data";
+import { UserData } from "./user.data";
 
 @Entity({ name: "publication_clap" })
 export class PublicationClapData {
@@ -23,9 +23,9 @@ export class PublicationClapData {
   @JoinColumn({ name: "publicationId" })
   publication: VenturePublicationData;
 
-  @ManyToOne(() => UserDetailData, (userDetail) => userDetail.publicationClaps)
-  @JoinColumn({ name: "userDetailId" })
-  user: UserDetailData;
+  @ManyToOne(() => UserData, (user) => user.publicationClaps)
+  @JoinColumn({ name: "userId" })
+  user: UserData;
 
   @CreateDateColumn()
   createdAt: Date;

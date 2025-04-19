@@ -11,9 +11,9 @@ import {
 } from "typeorm";
 import { PublicationClapData } from "./publication-clap.data";
 import { PublicationCommentData } from "./publication-comment.data";
-import { VentureDetailData } from "./venture-detail.data";
 import { PublicationContentData } from "./publication-content.data";
 import { PublicationType } from "../../../domain/publications";
+import { VentureData } from "./venture.data";
 
 @Entity({ name: "venture_publication" })
 export class VenturePublicationData {
@@ -35,15 +35,9 @@ export class VenturePublicationData {
   @UpdateDateColumn()
   updatedAt: Date;
 
-  @Column()
-  detailId: string;
-
-  @ManyToOne(
-    () => VentureDetailData,
-    (ventureDetail) => ventureDetail.publications
-  )
-  @JoinColumn({ name: "detailId" })
-  detail: VentureDetailData;
+  @ManyToOne(() => VentureData, (venture) => venture.publications)
+  @JoinColumn({ name: "ventureId" })
+  venture: VentureData;
 
   @OneToMany(
     () => PublicationClapData,

@@ -1,8 +1,11 @@
-import { UserDetail } from "../user";
+import { VentureSponsorship } from "../contributions";
+import { VentureEvent } from "../events";
+import { VenturePublication } from "../publications";
+import { User } from "../user";
 import { VentureCategory } from "./category";
 import { VentureContact } from "./contact";
-import { VentureDetail } from "./detail";
 import { VentureLocation } from "./location";
+import { VentureSubscription } from "./subscription";
 
 export interface Venture {
   id: string;
@@ -12,11 +15,14 @@ export interface Venture {
   description: string;
   active: boolean;
   verified: boolean;
-  detail?: VentureDetail;
-  ownerDetail?: UserDetail;
+  owner?: User;
   categories: VentureCategory[];
   contact?: VentureContact;
   location?: VentureLocation;
+  events: VentureEvent[];
+  sponsorships: VentureSponsorship[];
+  subscriptions: VentureSubscription[];
+  publications: VenturePublication[];
   createdAt: Date;
   updatedAt: Date;
 }

@@ -1,21 +1,25 @@
 import {
-  Entity,
-  PrimaryGeneratedColumn,
   Column,
   CreateDateColumn,
-  UpdateDateColumn,
-  OneToOne,
-  ManyToOne,
-  ManyToMany,
-  JoinTable,
+  Entity,
   JoinColumn,
+  JoinTable,
+  ManyToMany,
+  ManyToOne,
+  OneToMany,
+  OneToOne,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
 } from "typeorm";
 
-import { VentureDetailData } from "./venture-detail.data";
-import { VentureLocationData } from "./venture-location.data";
-import { UserDetailData } from "./user-detail.data";
-import { VentureContactData } from "./venture-contact.data";
 import { VentureCategoryData } from "./venture-category.data";
+import { VentureContactData } from "./venture-contact.data";
+import { VentureEventData } from "./venture-event.data";
+import { VentureLocationData } from "./venture-location.data";
+import { VenturePublicationData } from "./venture-publication.data";
+import { VentureSponsorshipData } from "./venture-sponsorship.data";
+import { VentureSubscriptionData } from "./venture-subscription.data";
+import { UserData } from "./user.data";
 
 @Entity({ name: "venture" })
 export class VentureData {
@@ -46,12 +50,6 @@ export class VentureData {
   @UpdateDateColumn()
   updatedAt: Date;
 
-  @OneToOne(() => VentureDetailData, (ventureDetail) => ventureDetail.venture, {
-    cascade: true,
-  })
-  @JoinColumn({ name: "detailId" })
-  detail?: VentureDetailData;
-
   @OneToOne(
     () => VentureLocationData,
     (ventureLocation) => ventureLocation.Venture,
@@ -60,9 +58,9 @@ export class VentureData {
   @JoinColumn({ name: "locationId" })
   location?: VentureLocationData;
 
-  @ManyToOne(() => UserDetailData, (userDetail) => userDetail.ventures)
-  @JoinColumn({ name: "ownerDetailId" })
-  ownerDetail?: UserDetailData;
+  @ManyToOne(() => UserData, (user) => user.ventures)
+  @JoinColumn({ name: "ownerId" })
+  owner?: UserData;
 
   @OneToOne(
     () => VentureContactData,
@@ -83,4 +81,25 @@ export class VentureData {
     inverseJoinColumn: { name: "categoryId", referencedColumnName: "id" },
   })
   categories: VentureCategoryData[];
+
+  @OneToMany(() => VentureEventData, (ventureEvent) => ventureEvent.venture)
+  events: VentureEventData[];
+
+  @OneToMany(
+    () => VenturePublicationData,
+    (venturePublication) => venturePublication.venture
+  )
+  publications: VenturePublicationData[];
+
+  @OneToMany(
+    () => VentureSponsorshipData,
+    (ventureSponsorship) => ventureSponsorship.venture
+  )
+  sponsorships: VentureSponsorshipData[];
+
+  @OneToMany(
+    () => VentureSubscriptionData,
+    (ventureSubscription) => ventureSubscription.venture
+  )
+  subscriptions: VentureSubscriptionData[];
 }

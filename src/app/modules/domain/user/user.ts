@@ -1,6 +1,8 @@
-import { VentureCategory } from "../ventures";
+import { Municipality } from "../common";
+import { EventDonation, VentureSponsorship } from "../contributions";
+import { PublicationClap, PublicationComment } from "../publications";
+import { Venture, VentureCategory, VentureSubscription } from "../ventures";
 import { UserContact } from "./contact";
-import { UserDetail } from "./detail";
 import { Role } from "./role";
 
 export interface User {
@@ -11,11 +13,20 @@ export interface User {
   lastName: string;
   active: boolean;
   contact?: UserContact;
-  detail?: UserDetail;
   verified: boolean;
   onboardingCompleted: boolean;
   roles: Role[];
   preferences: VentureCategory[];
+  gender: "M" | "F" | "O";
+  birthDate: Date;
+  municipality?: Municipality;
+  comments: PublicationComment[];
+  donations: EventDonation[];
+  notifications: Notification[];
+  publicationClaps: PublicationClap[];
+  sponsorships: VentureSponsorship[];
+  subscriptions: VentureSubscription[];
+  ventures: Venture[];
   createdAt: Date;
   updatedAt: Date;
 }

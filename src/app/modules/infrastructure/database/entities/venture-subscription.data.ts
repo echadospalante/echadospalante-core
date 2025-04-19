@@ -6,9 +6,8 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from "typeorm";
-
-import { UserDetailData } from "./user-detail.data";
-import { VentureDetailData } from "./venture-detail.data";
+import { UserData } from "./user.data";
+import { VentureData } from "./venture.data";
 
 @Entity({ name: "venture_subscription" })
 export class VentureSubscriptionData {
@@ -18,14 +17,11 @@ export class VentureSubscriptionData {
   @CreateDateColumn()
   createdAt: Date;
 
-  @ManyToOne(() => UserDetailData, (userDetail) => userDetail.subscriptions)
-  @JoinColumn({ name: "subscriberDetailId" })
-  subscriber?: UserDetailData;
+  @ManyToOne(() => UserData, (user) => user.subscriptions)
+  @JoinColumn({ name: "subscriberId" })
+  subscriber?: UserData;
 
-  @ManyToOne(
-    () => VentureDetailData,
-    (ventureDetail) => ventureDetail.subscriptions
-  )
+  @ManyToOne(() => VentureData, (venture) => venture.subscriptions)
   @JoinColumn({ name: "ventureId" })
-  detail?: VentureDetailData;
+  venture?: VentureData;
 }

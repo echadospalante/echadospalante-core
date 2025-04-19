@@ -1,4 +1,4 @@
-import { User } from "../auth";
+import { User } from "../user";
 import { Venture } from "./venture";
 
 export interface VentureCategory {
