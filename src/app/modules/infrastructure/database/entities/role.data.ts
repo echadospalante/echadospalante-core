@@ -18,9 +18,6 @@ export class RoleData {
   @Column({ type: "enum", enum: AppRole, unique: true })
   name: AppRole;
 
-  @Column({ type: "enum", enum: AppRole, default: AppRole.USER })
-  label2: string;
-
   @Column({ default: "" })
   label: string;
 
