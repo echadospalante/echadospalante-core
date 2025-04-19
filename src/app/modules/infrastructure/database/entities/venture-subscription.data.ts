@@ -1,5 +1,4 @@
 import {
-  Column,
   CreateDateColumn,
   Entity,
   JoinColumn,
@@ -7,11 +6,12 @@ import {
   PrimaryGeneratedColumn,
   Unique,
 } from "typeorm";
+
 import { UserData } from "./user.data";
 import { VentureData } from "./venture.data";
 
 @Entity({ name: "venture_subscription" })
-  @Unique(["subscriberId", "ventureId"])
+@Unique(["subscriberId", "ventureId"])
 export class VentureSubscriptionData {
   @PrimaryGeneratedColumn("uuid")
   id: string;
