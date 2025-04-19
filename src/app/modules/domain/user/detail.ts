@@ -1,7 +1,7 @@
 import { EventDonation, VentureSponsorship } from "../contributions";
 import { PublicationClap, PublicationComment } from "../publications";
 // import { NewsClap } from "../news";
-import { Municipality } from "../shared/geo";
+import { Municipality } from "../common/geo";
 import { Venture, VentureCategory, VentureSubscription } from "../ventures";
 import { User } from "./user";
 import { Notification } from "../notifications";

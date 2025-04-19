@@ -8,7 +8,7 @@ import {
   UpdateDateColumn,
 } from "typeorm";
 
-import { ContentType } from "../../../domain/shared";
+import { ContentType } from "../../../domain/common";
 import { VenturePublicationData } from "./venture-publication.data";
 
 @Entity({ name: "publication_content" })

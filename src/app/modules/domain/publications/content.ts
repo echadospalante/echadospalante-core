@@ -1,4 +1,4 @@
-import { ContentType } from "../shared";
+import { ContentType } from "../common";
 import { VenturePublication } from "./publication";
 
 export class PublicationContent {

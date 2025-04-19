@@ -1,4 +1,4 @@
-import { ContentType } from "../shared";
+import { ContentType } from "../common";
 import { Venture } from "../ventures/venture";
 import { PublicationClap } from "./clap";
 import { PublicationComment } from "./comment";
