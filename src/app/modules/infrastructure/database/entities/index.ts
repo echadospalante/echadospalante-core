@@ -5,6 +5,7 @@ export { EventDonationData } from "./event-donation.data";
 export { EventLocationData } from "./event-location.data";
 export { MunicipalityData } from "./municipality.data";
 export { NotificationData } from "./notification.data";
+export { PublicationCategoryData } from "./publication-category.data";
 export { PublicationClapData } from "./publication-clap.data";
 export { PublicationCommentData } from "./publication-comment.data";
 export { PublicationContentData } from "./publication-content.data";
