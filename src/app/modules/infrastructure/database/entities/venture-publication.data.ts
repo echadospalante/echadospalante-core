@@ -4,6 +4,7 @@ import {
   CreateDateColumn,
   Entity,
   JoinColumn,
+  ManyToMany,
   ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn,
@@ -14,6 +15,8 @@ import { PublicationCommentData } from "./publication-comment.data";
 import { PublicationContentData } from "./publication-content.data";
 import { PublicationType } from "../../../domain/publications";
 import { VentureData } from "./venture.data";
+import { PublicationCategoryData } from "./publication-category.data";
+import { EventCategoryData } from "./event-category.data";
 
 @Entity({ name: "venture_publication" })
 export class VenturePublicationData {
@@ -38,21 +41,31 @@ export class VenturePublicationData {
 
   @OneToMany(
     () => PublicationClapData,
-    (publicationClap) => publicationClap.publication
+    (publicationClap) => publicationClap.publication,
+    { eager: true, cascade: true }
   )
   claps: PublicationClapData[];
 
   @OneToMany(
     () => PublicationCommentData,
-    (publicationComment) => publicationComment.publication
+    (publicationComment) => publicationComment.publication,
+    { eager: true, cascade: true }
   )
   comments: PublicationCommentData[];
 
   @OneToMany(
     () => PublicationContentData,
-    (publicationContent) => publicationContent.publication
+    (publicationContent) => publicationContent.publication,
+    { eager: true, cascade: true }
   )
   contents: PublicationContentData[];
+
+  @ManyToMany(
+    () => PublicationCategoryData,
+    (publicationCategory) => publicationCategory.publications,
+    { eager: true }
+  )
+  categories: PublicationCategoryData[];
 
   @CreateDateColumn()
   createdAt: Date;

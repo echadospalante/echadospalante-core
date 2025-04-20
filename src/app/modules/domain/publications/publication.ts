@@ -1,5 +1,6 @@
 import { ContentType } from "../common";
 import { Venture } from "../ventures/venture";
+import { PublicationCategory } from "./category";
 import { PublicationClap } from "./clap";
 import { PublicationComment } from "./comment";
 
@@ -13,6 +14,7 @@ export interface VenturePublication {
   claps: PublicationClap[];
   comments: PublicationComment[];
   contents: PublicationContent[];
+  categories: PublicationCategory[];
   createdAt: Date;
 }
 

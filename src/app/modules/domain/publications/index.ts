@@ -1,3 +1,4 @@
+export { PublicationCategory } from "./category";
 export { PublicationClap } from "./clap";
 export { PublicationComment } from "./comment";
 export {
