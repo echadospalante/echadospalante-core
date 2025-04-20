@@ -33,7 +33,6 @@ export interface PublicationContent {
 
 export interface PublicationCreate {
   description: string;
-  type: PublicationType;
   contents: PublicationContent[];
   categoriesIds: string[];
 }

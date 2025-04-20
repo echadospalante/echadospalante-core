@@ -8,3 +8,9 @@ export interface PublicationComment {
   publication: VenturePublication;
   createdAt: Date;
 }
+
+export interface PublicationCommentCreate {
+  content: string;
+  publicationId: string;
+  authorId: string;
+}

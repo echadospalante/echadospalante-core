@@ -7,3 +7,8 @@ export interface PublicationClap {
   publication: VenturePublication;
   createdAt: Date;
 }
+
+export interface PublicationClapCreate {
+  publicationId: string;
+  userId: string;
+}
