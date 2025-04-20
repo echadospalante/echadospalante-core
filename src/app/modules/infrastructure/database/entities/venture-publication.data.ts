@@ -23,21 +23,18 @@ export class VenturePublicationData {
   @Column()
   description: string;
 
-  @Column({ type: "enum", enum: PublicationType })
-  type: PublicationType;
+  @Column({ default: true })
+  active: boolean;
+
+  @ManyToOne(() => VentureData, (venture) => venture.publications)
+  @JoinColumn({ name: "ventureId" })
+  venture?: VentureData;
 
   @Column()
   clapsCount: number;
 
-  @CreateDateColumn()
-  createdAt: Date;
-
-  @UpdateDateColumn()
-  updatedAt: Date;
-
-  @ManyToOne(() => VentureData, (venture) => venture.publications)
-  @JoinColumn({ name: "ventureId" })
-  venture: VentureData;
+  @Column({ type: "enum", enum: PublicationType })
+  type: PublicationType;
 
   @OneToMany(
     () => PublicationClapData,
@@ -56,4 +53,7 @@ export class VenturePublicationData {
     (publicationContent) => publicationContent.publication
   )
   contents: PublicationContentData[];
+
+  @CreateDateColumn()
+  createdAt: Date;
 }

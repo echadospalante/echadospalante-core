@@ -8,10 +8,11 @@ export interface VenturePublication {
   description: string;
   active: boolean;
   venture?: Venture;
+  clapsCount: number;
   type: PublicationType;
   claps: PublicationClap[];
   comments: PublicationComment[];
-  body: PublicationContent[];
+  contents: PublicationContent[];
   createdAt: Date;
 }
 
@@ -27,4 +28,10 @@ export interface PublicationContent {
   id: string;
   type: ContentType;
   content: string; // JSON string
+}
+
+export interface PublicationCreate {
+  description: string;
+  type: PublicationType;
+  contents: PublicationContent[];
 }
