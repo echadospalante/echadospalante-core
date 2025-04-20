@@ -23,7 +23,7 @@ export class PublicationClapData {
   @JoinColumn({ name: "publicationId" })
   publication: VenturePublicationData;
 
-  @ManyToOne(() => UserData, (user) => user.publicationClaps)
+  @ManyToOne(() => UserData, (user) => user.publicationClaps, { eager: true })
   @JoinColumn({ name: "userId" })
   user: UserData;
 

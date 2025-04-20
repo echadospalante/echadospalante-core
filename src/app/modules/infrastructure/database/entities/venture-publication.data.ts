@@ -33,6 +33,9 @@ export class VenturePublicationData {
   @Column()
   clapsCount: number;
 
+  @Column()
+  commentsCount: number;
+
   @OneToMany(
     () => PublicationClapData,
     (publicationClap) => publicationClap.publication,

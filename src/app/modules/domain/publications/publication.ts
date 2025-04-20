@@ -10,6 +10,7 @@ export interface VenturePublication {
   active: boolean;
   venture?: Venture;
   clapsCount: number;
+  commentsCount: number;
   claps: PublicationClap[];
   comments: PublicationComment[];
   contents: PublicationContent[];

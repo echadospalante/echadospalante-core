@@ -16,7 +16,7 @@ export class PublicationCommentData {
   @PrimaryGeneratedColumn("uuid")
   id: string;
 
-  @ManyToOne(() => UserData, (user) => user.comments)
+  @ManyToOne(() => UserData, (user) => user.comments, { eager: true })
   @JoinColumn({ name: "authorId" })
   author: UserData;
 
