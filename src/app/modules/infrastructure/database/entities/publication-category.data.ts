@@ -12,7 +12,7 @@ import { VentureEventData } from "./venture-event.data";
 import { VenturePublicationData } from "./venture-publication.data";
 
 @Entity({
-  name: "event_category",
+  name: "publication_category",
 })
 export class PublicationCategoryData {
   @PrimaryGeneratedColumn("uuid")
