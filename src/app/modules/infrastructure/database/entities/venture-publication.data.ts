@@ -30,10 +30,10 @@ export class VenturePublicationData {
   @JoinColumn({ name: "ventureId" })
   venture?: VentureData;
 
-  @Column()
+  @Column({ default: 0 })
   clapsCount: number;
 
-  @Column()
+  @Column({ default: 0 })
   commentsCount: number;
 
   @OneToMany(
