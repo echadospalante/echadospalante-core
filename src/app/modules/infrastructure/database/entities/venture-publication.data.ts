@@ -8,15 +8,13 @@ import {
   ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn,
-  UpdateDateColumn,
 } from "typeorm";
+import { PublicationType } from "../../../domain/publications";
+import { PublicationCategoryData } from "./publication-category.data";
 import { PublicationClapData } from "./publication-clap.data";
 import { PublicationCommentData } from "./publication-comment.data";
 import { PublicationContentData } from "./publication-content.data";
-import { PublicationType } from "../../../domain/publications";
 import { VentureData } from "./venture.data";
-import { PublicationCategoryData } from "./publication-category.data";
-import { EventCategoryData } from "./event-category.data";
 
 @Entity({ name: "venture_publication" })
 export class VenturePublicationData {
@@ -35,9 +33,6 @@ export class VenturePublicationData {
 
   @Column()
   clapsCount: number;
-
-  @Column({ type: "enum", enum: PublicationType })
-  type: PublicationType;
 
   @OneToMany(
     () => PublicationClapData,
