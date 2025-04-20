@@ -4,4 +4,5 @@ export {
   PublicationContent,
   PublicationType,
   VenturePublication,
+  PublicationCreate,
 } from "./publication";
