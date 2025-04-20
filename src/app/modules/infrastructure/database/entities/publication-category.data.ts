@@ -33,7 +33,10 @@ export class PublicationCategoryData {
   @UpdateDateColumn()
   updatedAt: Date;
 
-  @ManyToMany(() => VentureEventData, (ventureEvent) => ventureEvent.categories)
+  @ManyToMany(
+    () => VenturePublicationData,
+    (venturePublication) => venturePublication.categories
+  )
   @JoinTable({
     name: "x_publication_publication_category",
     joinColumn: { name: "categoryId", referencedColumnName: "id" },

@@ -1,4 +1,3 @@
-// venture-publication.entity.ts
 import {
   Column,
   CreateDateColumn,
@@ -9,7 +8,7 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
 } from "typeorm";
-import { PublicationType } from "../../../domain/publications";
+
 import { PublicationCategoryData } from "./publication-category.data";
 import { PublicationClapData } from "./publication-clap.data";
 import { PublicationCommentData } from "./publication-comment.data";
