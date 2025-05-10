@@ -58,6 +58,7 @@ export class UserData {
 
   @OneToOne(() => UserContactData, (contact) => contact.user, {
     nullable: true,
+    eager: false,
   })
   @JoinColumn({ name: "contactId" })
   contact?: UserContactData;
