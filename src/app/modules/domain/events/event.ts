@@ -15,8 +15,13 @@ export interface VentureEvent {
   contact: EventContact;
   categories: EventCategory[];
   donations: EventDonation[];
-  startDate: Date;
-  endDate: Date;
+  datesAndHours: {
+    date: string; // Format 'YYYY-MM-DD'
+    workingRanges: {
+      start: string; // Format 'HH:mm'
+      end: string; // Format 'HH:mm'
+    }[];
+  }[];
   createdAt: Date;
   updatedAt: Date;
 }
@@ -30,11 +35,16 @@ export interface EventCreate {
     lng?: number;
     description?: string;
   };
+  datesAndHours: {
+    date: string; // Format 'YYYY-MM-DD'
+    workingRanges: {
+      start: string; // Format 'HH:mm'
+      end: string; // Format 'HH:mm'
+    }[];
+  }[];
   categoriesIds: string[];
-  startDate: Date;
   contactEmail?: string;
   contactPhoneNumber?: string;
-  endDate: Date;
 }
 
 export interface EventUpdate {
