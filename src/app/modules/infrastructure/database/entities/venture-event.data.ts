@@ -1,19 +1,20 @@
 import {
-  Entity,
-  PrimaryGeneratedColumn,
   Column,
   CreateDateColumn,
-  UpdateDateColumn,
+  Entity,
+  JoinColumn,
+  ManyToMany,
   ManyToOne,
   OneToMany,
   OneToOne,
-  ManyToMany,
-  JoinColumn,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
 } from "typeorm";
-import { EventLocationData } from "./event-location.data";
-import { EventDonationData } from "./event-donation.data";
+
 import { EventCategoryData } from "./event-category.data";
 import { EventContactData } from "./event-contact.data";
+import { EventDonationData } from "./event-donation.data";
+import { EventLocationData } from "./event-location.data";
 import { VentureData } from "./venture.data";
 
 @Entity({ name: "venture_event" })
@@ -60,11 +61,14 @@ export class VentureEventData {
   @OneToMany(() => EventDonationData, (eventDonation) => eventDonation.event)
   donations: EventDonationData[];
 
-  @Column()
-  startDate: Date;
-
-  @Column()
-  endDate: Date;
+  @Column("jsonb", { nullable: true })
+  datesAndHours: {
+    date: string; // Format 'YYYY-MM-DD'
+    workingRanges: {
+      start: string; // Format 'HH:mm'
+      end: string; // Format 'HH:mm'
+    }[];
+  }[];
 
   @CreateDateColumn()
   createdAt: Date;
