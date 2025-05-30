@@ -40,7 +40,7 @@ export interface EventCreate {
 }
 
 export interface DatesAndHour {
-  date: Date;
+  date: string;
   workingRanges: WorkingRange[];
 }
 
