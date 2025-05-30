@@ -61,7 +61,7 @@ export class VentureEventData {
   @OneToMany(() => EventDonationData, (eventDonation) => eventDonation.event)
   donations: EventDonationData[];
 
-  @Column("jsonb", { nullable: true })
+  @Column("jsonb", { nullable: true,  })
   datesAndHours: {
     date: string; // Format 'YYYY-MM-DD'
     workingRanges: {

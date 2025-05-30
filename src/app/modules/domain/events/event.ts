@@ -30,21 +30,23 @@ export interface EventCreate {
   title: string;
   description: string;
   coverPhoto: string;
-  location?: {
-    lat?: number;
-    lng?: number;
-    description?: string;
-  };
-  datesAndHours: {
-    date: string; // Format 'YYYY-MM-DD'
-    workingRanges: {
-      start: string; // Format 'HH:mm'
-      end: string; // Format 'HH:mm'
-    }[];
-  }[];
   categoriesIds: string[];
-  contactEmail?: string;
-  contactPhoneNumber?: string;
+  contactEmail: string;
+  contactPhoneNumber: string;
+  locationLat: string;
+  locationLng: string;
+  datesAndHours: DatesAndHour[];
+  locationDescription: string;
+}
+
+export interface DatesAndHour {
+  date: Date;
+  workingRanges: WorkingRange[];
+}
+
+export interface WorkingRange {
+  start: string;
+  end: string;
 }
 
 export interface EventUpdate {
