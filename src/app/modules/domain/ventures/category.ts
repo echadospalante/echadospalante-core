@@ -12,6 +12,13 @@ export interface VentureCategory {
   updatedAt: Date;
 }
 
+export interface VentureCategoryStats {
+  id: string;
+  name: string;
+  slug: string;
+  venturesCount: number;
+}
+
 export type VentureCategoryCreate = Pick<
   VentureCategory,
   "name" | "description"
