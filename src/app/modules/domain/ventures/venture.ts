@@ -52,6 +52,7 @@ export interface VentureUpdate {
     phoneNumber?: string;
   };
   location?: {
+    municipalityId?: number;
     lat?: number;
     lng?: number;
     description?: string;
