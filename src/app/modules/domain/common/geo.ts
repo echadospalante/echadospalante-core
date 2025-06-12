@@ -28,6 +28,8 @@ export interface Municipality {
   id: number;
   name: string;
   department: Department;
+  lat: number;
+  lng: number;
   users: User[];
   createdAt: Date;
   updatedAt: Date;

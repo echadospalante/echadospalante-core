@@ -20,11 +20,18 @@ export class MunicipalityData {
   @Column()
   name: string;
 
+  @Column()
+  lat: number;
+
+  @Column()
+  lng: number;
+
   @CreateDateColumn()
   createdAt: Date;
 
   @UpdateDateColumn()
   updatedAt: Date;
+
 
   @ManyToOne(() => DepartmentData, (department) => department.municipalities)
   @JoinColumn({ name: "departmentId" })
