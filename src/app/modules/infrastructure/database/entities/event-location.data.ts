@@ -5,9 +5,12 @@ import {
   OneToOne,
   Point,
   Index,
+  ManyToOne,
+  JoinColumn,
 } from "typeorm";
 
 import { VentureEventData } from "./venture-event.data";
+import { MunicipalityData } from "./municipality.data";
 
 @Entity({ name: "event_location" })
 export class EventLocationData {
@@ -21,6 +24,14 @@ export class EventLocationData {
   })
   @Index({ spatial: true })
   public location?: Point;
+
+  @ManyToOne(
+    () => MunicipalityData,
+    (municipality) => municipality.eventLocations,
+    { eager: true, nullable: false }
+  )
+  @JoinColumn({ name: "municipalityId" })
+  municipality: MunicipalityData;
 
   @Column({ nullable: true })
   description?: string;

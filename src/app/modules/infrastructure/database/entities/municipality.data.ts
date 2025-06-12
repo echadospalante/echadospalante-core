@@ -11,6 +11,8 @@ import {
 
 import { DepartmentData } from "./department.data";
 import { UserData } from "./user.data";
+import { VentureLocationData } from "./venture-location.data";
+import { EventLocationData } from "./event-location.data";
 
 @Entity({ name: "municipality" })
 export class MunicipalityData {
@@ -25,6 +27,20 @@ export class MunicipalityData {
 
   @Column({ type: "double precision" })
   lng: number;
+
+  @OneToMany(
+    () => VentureLocationData,
+    (ventureLocation) => ventureLocation.municipality,
+    { eager: true }
+  )
+  ventureLocations: VentureLocationData[];
+
+  @OneToMany(
+    () => EventLocationData,
+    (eventLocation) => eventLocation.municipality,
+    { eager: true }
+  )
+  eventLocations: EventLocationData[];
 
   @CreateDateColumn()
   createdAt: Date;

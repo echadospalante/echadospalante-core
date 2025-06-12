@@ -7,7 +7,9 @@
 //   flag: string;
 // }
 
+import { EventLocation } from "../events";
 import { User } from "../user";
+import { VentureLocation } from "../ventures/location";
 
 // export interface Currency {
 //   id: number;
@@ -30,6 +32,8 @@ export interface Municipality {
   department: Department;
   lat: number;
   lng: number;
+  ventureLocations: VentureLocation[];
+  eventLocations: EventLocation[];
   users: User[];
   createdAt: Date;
   updatedAt: Date;
