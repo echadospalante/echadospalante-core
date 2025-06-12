@@ -31,14 +31,12 @@ export class MunicipalityData {
   @OneToMany(
     () => VentureLocationData,
     (ventureLocation) => ventureLocation.municipality,
-    { eager: true }
   )
   ventureLocations: VentureLocationData[];
 
   @OneToMany(
     () => EventLocationData,
     (eventLocation) => eventLocation.municipality,
-    { eager: true }
   )
   eventLocations: EventLocationData[];
 
