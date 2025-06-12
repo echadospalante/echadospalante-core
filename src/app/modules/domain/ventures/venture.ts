@@ -37,6 +37,7 @@ export interface VentureCreate {
     phoneNumber?: string;
   };
   location?: {
+    municipalityId?: number;
     lat?: number;
     lng?: number;
     description?: string;

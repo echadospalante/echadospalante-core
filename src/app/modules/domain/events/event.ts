@@ -33,6 +33,7 @@ export interface EventCreate {
   categoriesIds: string[];
   contactEmail: string;
   contactPhoneNumber: string;
+  municipalityId: number;
   locationLat: string;
   locationLng: string;
   datesAndHours: DatesAndHour[];
