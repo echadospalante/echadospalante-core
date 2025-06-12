@@ -20,10 +20,10 @@ export class MunicipalityData {
   @Column()
   name: string;
 
-  @Column()
+  @Column({ type: "double precision" })
   lat: number;
 
-  @Column()
+  @Column({ type: "double precision" })
   lng: number;
 
   @CreateDateColumn()
@@ -31,7 +31,6 @@ export class MunicipalityData {
 
   @UpdateDateColumn()
   updatedAt: Date;
-
 
   @ManyToOne(() => DepartmentData, (department) => department.municipalities)
   @JoinColumn({ name: "departmentId" })
