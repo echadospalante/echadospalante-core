@@ -16,6 +16,7 @@ export interface Venture {
   active: boolean;
   verified: boolean;
   owner?: User;
+  subscriptionsCount: number;
   categories: VentureCategory[];
   contact?: VentureContact;
   location?: VentureLocation;
