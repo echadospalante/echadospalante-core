@@ -44,7 +44,7 @@ export class VentureData {
   @Column({ default: false })
   verified: boolean;
 
-  @Column({ type: "bigint", default: 0 })
+  @Column({ default: 0 })
   subscriptionsCount: number;
 
   @CreateDateColumn()
