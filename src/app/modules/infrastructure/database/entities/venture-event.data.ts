@@ -31,6 +31,12 @@ export class VentureEventData {
   @Column()
   coverPhoto: string;
 
+  @Column({ default: 0 })
+  donationsCount: number;
+
+  @Column({ default: 0 })
+  totalDonations: number;
+
   @Column({ type: "varchar", unique: true })
   slug: string;
 
@@ -61,7 +67,7 @@ export class VentureEventData {
   @OneToMany(() => EventDonationData, (eventDonation) => eventDonation.event)
   donations: EventDonationData[];
 
-  @Column("jsonb", { nullable: true,  })
+  @Column("jsonb", { nullable: true })
   datesAndHours: {
     date: string; // Format 'YYYY-MM-DD'
     workingRanges: {

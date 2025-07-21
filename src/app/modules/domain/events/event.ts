@@ -9,6 +9,8 @@ export interface VentureEvent {
   title: string;
   slug: string;
   description: string;
+  donationsCount: number;
+  totalDonations: number;
   coverPhoto: string;
   venture?: Venture;
   location: EventLocation;
