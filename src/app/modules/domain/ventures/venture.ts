@@ -12,6 +12,8 @@ export interface Venture {
   name: string;
   slug: string;
   coverPhoto: string;
+  sponsorshipsCount: number;
+  totalSponsorships: number;
   description: string;
   active: boolean;
   verified: boolean;

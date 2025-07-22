@@ -35,6 +35,12 @@ export class VentureData {
   @Column()
   coverPhoto: string;
 
+  @Column({ default: 0 })
+  sponsorshipsCount: number;
+
+  @Column({ default: 0 })
+  totalSponsorships: number;
+
   @Column()
   description: string;
 
